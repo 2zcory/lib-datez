@@ -1,5 +1,5 @@
 {
-  "name": "@izutils/izdate",
+  "name": "@izutils/datez",
   "version": "1.0.0",
   "description": "Date Utils",
   "main": "index.js",
