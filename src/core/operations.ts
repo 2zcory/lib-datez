@@ -24,7 +24,7 @@ export const operations = {
     const hourString = formatString.match(/h{1,2}/i)?.[0];
     const minuteString = formatString.match(/m{1,2}/)?.[0];
 
-    let returnValue = formatString;
+    let returnValue: string = formatString;
 
     yearString &&
       returnValue.replace(
@@ -35,26 +35,26 @@ export const operations = {
           .slice(4 - yearString.length),
       );
 
-    monthString &&
-      returnValue.replace(
+    if (monthString)
+      returnValue = returnValue.replace(
         monthString,
         (newDate.getMonth() + 1).toString().padStart(monthString.length, "0"),
       );
 
-    dayString &&
-      returnValue.replace(
+    if (dayString)
+      returnValue = returnValue.replace(
         dayString,
         newDate.getDate().toString().padStart(dayString.length, "0"),
       );
 
-    hourString &&
-      returnValue.replace(
+    if (hourString)
+      returnValue = returnValue.replace(
         hourString,
         newDate.getHours().toString().padStart(hourString.length, "0"),
       );
 
-    minuteString &&
-      returnValue.replace(
+    if (minuteString)
+      returnValue = returnValue.replace(
         minuteString,
         newDate.getMinutes().toString().padStart(minuteString.length, "0"),
       );

@@ -38,8 +38,8 @@ declare namespace DateZ {
     getWeek: () => FluentReturnValue<Week>;
 
     execute: <TReturnValue extends DateZ.Output = Date>() => TReturnValue;
-    toDate: () => Date;
     toString: () => string;
+    toDate: () => Date;
   }
 }
 
