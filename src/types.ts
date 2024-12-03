@@ -20,18 +20,22 @@ declare namespace DateZ {
     }>;
   }
 
+  interface FluentReturnValue<T = unknown> {
+    execute: () => T;
+  }
+
   interface Fluent {
     addHours: (hours: number) => Fluent;
     addDays: (days: number) => Fluent;
     addMonths: (months: number) => Fluent;
 
-    format: (formatString: FormatString) => string;
+    format: (formatString: FormatString) => FluentReturnValue<string>;
 
-    isBefore: (otherDate: InputDate) => boolean;
-    isAfter: (otherDate: InputDate) => boolean;
-    isToday: () => boolean;
+    isBefore: (otherDate: InputDate) => FluentReturnValue<boolean>;
+    isAfter: (otherDate: InputDate) => FluentReturnValue<boolean>;
+    isToday: () => FluentReturnValue<boolean>;
 
-    getWeek: () => Week;
+    getWeek: () => FluentReturnValue<Week>;
 
     execute: <TReturnValue extends DateZ.Output = Date>() => TReturnValue;
     toDate: () => Date;
