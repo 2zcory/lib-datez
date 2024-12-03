@@ -1,0 +1,36 @@
+{
+  "name": "izdate",
+  "version": "1.0.0",
+  "description": "Date Utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsup",
+    "preversion": "pnpm build",
+    "postversion": "git push && git push --tags"
+  },
+  "keywords": [],
+  "author": "izyroc",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/2zcory/izdate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/2zcory/izdate/issues"
+  },
+  "homepage": "https://github.com/2zcory/izdate#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
+}

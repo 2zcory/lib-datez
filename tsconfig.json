@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "module": "NodeNext",                                /* Specify what module code is generated. */
+    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+    "strict": true,                                      /* Enable all strict type-checking options. */
+    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+    "skipLibCheck": true,
+    "moduleResolution": "NodeNext",
+    "typeRoots": ["./node_modules/@types"],
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts"], // Include all TypeScript files in the `src` folder.
+  "exclude": ["node_modules", "dist"], // Exclude unnecessary files from compilation.
+}
