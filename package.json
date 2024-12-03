@@ -1,5 +1,5 @@
 {
-  "name": "izdate",
+  "name": "@izutils/izdate",
   "version": "1.0.0",
   "description": "Date Utils",
   "main": "index.js",
@@ -14,12 +14,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/2zcory/izdate.git"
+    "url": "git+ssh://git@github.com/2zcory/datez.git"
   },
   "bugs": {
-    "url": "https://github.com/2zcory/izdate/issues"
+    "url": "https://github.com/2zcory/datez/issues"
   },
-  "homepage": "https://github.com/2zcory/izdate#readme",
+  "homepage": "https://github.com/2zcory/datez#readme",
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "jest": "^29.7.0",
@@ -32,5 +32,8 @@
     "dist",
     "README.md",
     "LICENSE"
-  ]
+  ],
+  "directories": {
+    "test": "tests"
+  }
 }
