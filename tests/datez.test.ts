@@ -12,3 +12,13 @@ describe("DateZ", () => {
     expect(date.toISOString()).toBe("2024-12-13T00:00:00.000Z");
   });
 });
+
+describe("DateZ - Format", () => {
+  test("Test format YYYY-MM-DD (1)", () => {
+    const formatString = datez("2024-12-03T00:00:00.000Z")
+      .format("YYYY-MM-DD")
+      .execute();
+
+    expect(formatString).toBe("2024-12-03");
+  });
+});

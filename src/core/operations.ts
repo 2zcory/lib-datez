@@ -26,8 +26,8 @@ export const operations = {
 
     let returnValue: string = formatString;
 
-    yearString &&
-      returnValue.replace(
+    if (yearString)
+      returnValue = returnValue.replace(
         yearString,
         newDate
           .getFullYear()
