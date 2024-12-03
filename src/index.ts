@@ -1,0 +1,1 @@
+export { datez } from "./datez";
