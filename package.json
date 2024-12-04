@@ -14,7 +14,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsup",
-    "preversion": "pnpm build",
+    "prepublish": "pnpm build",
     "postversion": "git push && git push --tags"
   },
   "keywords": [],
