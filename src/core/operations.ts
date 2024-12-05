@@ -61,6 +61,12 @@ export const operations = {
 
     return returnValue;
   },
+
+  toString: (date: Date) => {
+    const newDate = new Date(date);
+    return newDate.toISOString();
+  },
+
   isBefore: (date: Date, otherDate: Date | string): boolean =>
     new Date(date).getTime() < new Date(otherDate).getTime(),
   isAfter: (date: Date, otherDate: Date | string): boolean =>

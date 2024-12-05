@@ -4,6 +4,7 @@ declare namespace DateZ {
     | "addDays"
     | "addMonths"
     | "format"
+    | "toString"
     | "isBefore"
     | "isAfter"
     | "isToday"
@@ -24,11 +25,11 @@ declare namespace DateZ {
     execute: () => T;
   }
 
-  interface Fluent {
-    addHours: (hours: number) => Fluent;
-    addDays: (days: number) => Fluent;
-    addMonths: (months: number) => Fluent;
+  interface Fluent<T extends DateZ.Output = Date> {
+    addHours: (hours: number) => Fluent<Date>;
+    addDays: (days: number) => Fluent<Date>;
 
+    addMonths: (months: number) => Fluent<Date>;
     format: (formatString: FormatString) => FluentReturnValue<string>;
 
     isBefore: (otherDate: InputDate) => FluentReturnValue<boolean>;
@@ -37,7 +38,7 @@ declare namespace DateZ {
 
     getWeek: () => FluentReturnValue<Week>;
 
-    execute: <TReturnValue extends DateZ.Output = Date>() => TReturnValue;
+    execute: () => T;
     toString: () => string;
     toDate: () => Date;
   }

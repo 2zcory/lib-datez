@@ -22,3 +22,10 @@ describe("DateZ - Format", () => {
     expect(formatString).toBe("2024-12-03");
   });
 });
+
+describe("DateZ - toString", () => {
+  test("Test toString (1)", () => {
+    const value = datez("2024-12-05").toString();
+    expect(value).toBe("2024-12-05T00:00:00.000Z");
+  });
+});
