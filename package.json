@@ -22,12 +22,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/2zcory/datez.git"
+    "url": "git+ssh://git@github.com/2zcory/lib-datez.git"
   },
   "bugs": {
-    "url": "https://github.com/2zcory/datez/issues"
+    "url": "https://github.com/2zcory/lib-datez/issues"
   },
-  "homepage": "https://github.com/2zcory/datez#readme",
+  "homepage": "https://github.com/2zcory/lib-datez#readme",
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "jest": "^29.7.0",
