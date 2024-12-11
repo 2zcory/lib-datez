@@ -28,11 +28,17 @@ export namespace DateZ {
 
   export type PluginHandler = (date: Date, ...args: unknown[]) => unknown;
 
+  export interface RegisterPlugin {
+    (handler: PluginHandler, overwrite?: boolean): void;
+  }
+
   export type PluginRegistry = Record<string, PluginHandler>;
 
   interface FluentReturnValue<T = unknown> {
     execute: () => T;
   }
+
+  interface FluentRegisterPlugin extends Pick<Fluent, "register"> {}
 
   export interface Fluent<T extends unknown = Date> {
     addHours: (hours: number) => Fluent<Date>;
@@ -50,6 +56,9 @@ export namespace DateZ {
     execute: () => T;
     toString: () => string;
     toDate: () => Date;
-    register: (name: string, handler: PluginHandler) => void;
+    register: (
+      handler: PluginHandler,
+      overwrite?: boolean,
+    ) => FluentRegisterPlugin;
   }
 }

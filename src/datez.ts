@@ -28,8 +28,9 @@ function datez(input?: DateZ.InputDate): DateZ.Fluent {
         };
       }
       if (prop === "register") {
-        return (name: string, handler: DateZ.PluginHandler) => {
-          return registerPlugin(name, handler);
+        return (handler: DateZ.PluginHandler, overwrite?: boolean) => {
+          registerPlugin(handler, overwrite);
+          return proxy;
         };
       }
 
