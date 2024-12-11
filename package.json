@@ -10,7 +10,7 @@
       "import": "./dist/index.mjs"
     },
     "./plugins": {
-      "import": "./dist/plugins/*.mjs"
+      "import": "./dist/plugins/index.mjs"
     }
   },
   "scripts": {

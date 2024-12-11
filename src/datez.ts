@@ -56,6 +56,4 @@ function datez(input?: DateZ.InputDate): DateZ.Fluent {
   return proxy;
 }
 
-datez.prototype.register = registerPlugin;
-
 export default datez;
