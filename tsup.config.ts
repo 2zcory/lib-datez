@@ -1,9 +1,9 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ["src/index.ts", "src/types.d.ts"],
+  entry: ["src/index.ts", "src/plugins/*"],
   outDir: "dist",
-  format: ["esm", "cjs"],
+  format: ["esm"],
   target: "esnext",
   clean: true,
   dts: true,

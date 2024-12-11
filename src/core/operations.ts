@@ -1,23 +1,19 @@
-import { DateZ } from "../types";
+import DateZ from "../types";
 
 export const operations = {
   addHours: (date: Date, hours: number) => {
-    const newDate = new Date(date);
-    newDate.setHours(newDate.getHours() + hours);
-    return newDate;
+    date.setHours(date.getHours() + hours);
+    return date;
   },
   addDays: (date: Date, days: number) => {
-    const newDate = new Date(date);
-    newDate.setDate(newDate.getDate() + days);
-    return newDate;
+    date.setDate(date.getDate() + days);
+    return date;
   },
   addMonths: (date: Date, months: number): Date => {
-    const newDate = new Date(date);
-    newDate.setMonth(newDate.getMonth() + months);
-    return newDate;
+    date.setMonth(date.getMonth() + months);
+    return date;
   },
   format: (date: Date, formatString: DateZ.FormatString): string => {
-    const newDate = new Date(date);
     const yearString = formatString.match(/y{2,4}/i)?.[0] || "";
     const monthString = formatString.match(/M{1,2}/)?.[0];
     const dayString = formatString.match(/d{1,2}/i)?.[0];
@@ -29,7 +25,7 @@ export const operations = {
     if (yearString)
       returnValue = returnValue.replace(
         yearString,
-        newDate
+        date
           .getFullYear()
           .toString()
           .slice(4 - yearString.length),
@@ -38,33 +34,32 @@ export const operations = {
     if (monthString)
       returnValue = returnValue.replace(
         monthString,
-        (newDate.getMonth() + 1).toString().padStart(monthString.length, "0"),
+        (date.getMonth() + 1).toString().padStart(monthString.length, "0"),
       );
 
     if (dayString)
       returnValue = returnValue.replace(
         dayString,
-        newDate.getDate().toString().padStart(dayString.length, "0"),
+        date.getDate().toString().padStart(dayString.length, "0"),
       );
 
     if (hourString)
       returnValue = returnValue.replace(
         hourString,
-        newDate.getHours().toString().padStart(hourString.length, "0"),
+        date.getHours().toString().padStart(hourString.length, "0"),
       );
 
     if (minuteString)
       returnValue = returnValue.replace(
         minuteString,
-        newDate.getMinutes().toString().padStart(minuteString.length, "0"),
+        date.getMinutes().toString().padStart(minuteString.length, "0"),
       );
 
     return returnValue;
   },
 
   toString: (date: Date) => {
-    const newDate = new Date(date);
-    return newDate.toISOString();
+    return date.toISOString();
   },
 
   isBefore: (date: Date, otherDate: Date | string): boolean =>

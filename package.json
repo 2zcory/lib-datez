@@ -2,13 +2,15 @@
   "name": "@izutils/datez",
   "version": "1.1.8",
   "description": "Date Utils",
-  "main": "dist/index.js",
+  "main": "dist/index.mjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.mjs"
+    },
+    "./plugins": {
+      "import": "./dist/plugins/*.mjs"
     }
   },
   "scripts": {

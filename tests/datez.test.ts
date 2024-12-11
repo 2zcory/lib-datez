@@ -1,4 +1,4 @@
-import { datez } from "../src/datez";
+import datez from "../src";
 
 describe("DateZ", () => {
   test("Should create a valid date object", () => {

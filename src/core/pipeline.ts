@@ -1,4 +1,4 @@
-import { DateZ } from "../types";
+import DateZ from "../types";
 import { operations } from "./operations";
 
 export class Pipeline {
@@ -15,18 +15,32 @@ export class Pipeline {
     return this;
   }
 
-  execute(oprs: typeof operations) {
+  execute(oprs: typeof operations, plugins: DateZ.PluginRegistry) {
     return this.queue.reduce<DateZ.Output>(
       (currentDate, { operation, args }) => {
-        if (!oprs[operation]) {
+        if (
+          !oprs[operation as keyof typeof operations] &&
+          !plugins[operation]
+        ) {
           throw new Error(`Operation "${operation}" is not supported.`);
         }
 
-        if (currentDate instanceof Date) {
-          // TODO: type handle
-          return oprs[operation](currentDate, ...(args as [never]));
+        const newDate = new Date(currentDate as any);
+
+        if (!Number.isNaN(newDate.getTime())) {
+          if (plugins[operation]) {
+            return plugins[operation](newDate, ...args);
+          }
+          if (oprs[operation as keyof typeof operations]) {
+            // TODO: type handle
+            return oprs[operation as keyof typeof operations](
+              newDate,
+              ...(args as [never]),
+            );
+          }
         }
 
+        // TODO: Handle error
         // In case string or boolean
         return currentDate;
       },

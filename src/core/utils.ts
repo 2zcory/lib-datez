@@ -1,4 +1,4 @@
-import { DateZ } from "../types";
+import DateZ from "../types";
 
 export const parseDate = (input?: DateZ.InputDate): Date => {
   const date = input ? new Date(input) : new Date();
