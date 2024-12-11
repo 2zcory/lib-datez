@@ -1,4 +1,4 @@
-import DateZ from "../types";
+import { DateZ } from "..";
 
 const pluginRegistry: DateZ.PluginRegistry = {};
 

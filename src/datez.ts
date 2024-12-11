@@ -1,8 +1,8 @@
+import { DateZ } from ".";
 import { operations } from "./core/operations";
 import { Pipeline } from "./core/pipeline";
 import { getPlugins, registerPlugin } from "./core/pluginRegistry";
 import { parseDate } from "./core/utils";
-import DateZ from "./types";
 
 function datez(input?: DateZ.InputDate): DateZ.Fluent {
   const date = parseDate(input);

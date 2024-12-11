@@ -1,4 +1,4 @@
-import DateZ from "../types";
+import { DateZ } from "..";
 
 export const operations = {
   addHours: (date: Date, hours: number) => {

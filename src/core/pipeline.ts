@@ -1,4 +1,4 @@
-import DateZ from "../types";
+import { DateZ } from "..";
 import { operations } from "./operations";
 
 export class Pipeline {
@@ -7,7 +7,7 @@ export class Pipeline {
   constructor(private date: Date) {}
 
   addOperation<TArgs extends any[] = unknown[]>(
-    operation: DateZ.Operation,
+    operation: string,
     args: TArgs,
   ): this {
     this.queue.push({ operation, args });
