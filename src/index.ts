@@ -17,7 +17,7 @@ export namespace DateZ {
   export type InputDate = Date | string | number;
   export type Output = unknown;
   export type FormatString = "YYYY-MM-DD" | "YYYY-MM-DD hh:mm" | "D/M/YY";
-  type Week = [number, number]; // [weekNum, year]
+  export type Week = [number, number]; // [weekNum, year]
 
   export namespace Pipeline {
     export type QueueArgs<TArgs extends any[] = unknown[]> = Array<{
@@ -34,11 +34,11 @@ export namespace DateZ {
 
   export type PluginRegistry = Record<string, PluginHandler>;
 
-  interface FluentReturnValue<T = unknown> {
+  export interface FluentReturnValue<T = unknown> {
     execute: () => T;
   }
 
-  interface FluentRegisterPlugin extends Pick<Fluent, "register"> {}
+  export interface FluentRegisterPlugin extends Pick<Fluent, "register"> {}
 
   export interface Fluent<T extends unknown = Date> {
     addHours: (hours: number) => Fluent<Date>;
